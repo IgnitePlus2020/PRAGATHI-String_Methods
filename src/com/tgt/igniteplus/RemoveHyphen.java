@@ -6,13 +6,13 @@ public class RemoveHyphen {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string : ");
         String str = sc.nextLine();
-        char[] string = str.toCharArray();
+        char[] s = str.toCharArray();
         char[] newStringArray = new char[str.length()];
         int i, j = 0;
         for (i = 0; i < str.length(); i++) {
-            if ((string[i] == '-') && (Character.isDigit(string[i - 1])) && (Character.isDigit(string[i + 1])));
+            if ((s[i] == '-') && (s[i - 1]<65) && (s[i + 1]<65));
             else {
-                newStringArray[j] = string[i];
+                newStringArray[j] = s[i];
                 j++;
             }
         }
