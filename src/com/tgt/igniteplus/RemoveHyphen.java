@@ -1,27 +1,27 @@
 //program to remove hyphen(-) from a given string only if it is inbetween digits
 package com.tgt.igniteplus;
-import java.util.*;
+import java.util.Scanner;
 public class RemoveHyphen {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter a string:");
-        String str = in.nextLine();
-        char[] t = str.toCharArray();
-        for(int i =0;i<t.length;i++) {
-            if (t[i] == '-') {
-                int temp = t[i - 1];
-                int temp1 = t[i + 1];
-                if (temp1 < 65 && temp < 65) {
-                    t[i] = t[i + 1];
-                    i++;
-                }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string : ");
+        String str = sc.nextLine();
+        char[] string = str.toCharArray();
+        char[] newStringArray = new char[str.length()];
+        int i, j = 0;
+        for (i = 0; i < str.length(); i++) {
+            if ((string[i] == '-') && (Character.isDigit(string[i - 1])) && (Character.isDigit(string[i + 1])));
+            else {
+                newStringArray[j] = string[i];
+                j++;
             }
         }
-        System.out.println("String after removing hyphen between digits : "+str);
+        System.out.print("String after removing hyphen : ");
+        System.out.print(newStringArray);
     }
 }
 /*OUTPUT:
-Enter a string:
+Enter the string : 
 134-10/5566 A-block,Manyata Tech-Park
-String after removing hyphen between digits : 134-10/5566 A-block,Manyata Tech-Park
+String after removing hyphen : 13410/5566 A-block,Manyata Tech-Park 
  */
